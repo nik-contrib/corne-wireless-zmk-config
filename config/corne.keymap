@@ -13,8 +13,7 @@
         keymap {
                 compatible = "zmk,keymap";
 
-                default_layer {
-                        display-name = "default";
+                layer_0 {
                         bindings = <
    &none        &kp Q        &kp W &kp F              &kp P          &kp B         &kp J            &kp L              &kp U     &kp Y     &kp DOWN         &none
    &kp A        &mo 2        &kp R &kp S              &kp T          &kp G         &kp M            &kp N              &kp E     &kp I     &mo 1            &kp O
@@ -23,8 +22,7 @@
                         >;
                 };
 
-                lower_layer {
-                        display-name = "symbols";
+                layer_1 {
                         bindings = <
    &none         &none             &kp N9               &kp N5           &kp N0       &kp N3                   &kp N2                &kp N1      &kp N4          &kp N8            &none            &none
    &kp AMPERSAND &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS &kp LEFT_BRACE   &kp COLON    &kp N7                   &kp N6                &kp EQUAL   &kp COMMA       &kp DOT           &trans           &none
@@ -33,8 +31,7 @@
                         >;
                 };
 
-                extras_layer {
-                        display-name = "extras";
+                layer_2 {
                         bindings = <
    &none  &none   &mo 3           &kp GRAVE     &kp EXCLAMATION  &kp TILDE           &kp UNDERSCORE  &kp QUESTION       &kp SINGLE_QUOTE  &kp PIPE        &none            &none
    &none  &trans  &msc SCRL_DOWN  &msc SCRL_UP  &mkp LCLK        &mkp MCLK           &kp TAB         &mmv MOVE_LEFT     &mmv MOVE_UP      &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp ASTERISK
@@ -43,8 +40,7 @@
                         >;
                 };
 
-                mouse_layer {
-                        display-name = "mouse";
+                layer_3 {
                         bindings = <
    &trans  &trans  &trans  &bt BT_CLR  &bt BT_SEL 1  &bt BT_SEL 2          &kp F1      &kp F2             &kp F3           &kp F4                &kp F5                &kp F6
    &trans  &trans  &trans  &bt BT_PRV  &bt BT_NXT    &bt BT_SEL 3          &kp F7      &kp F8             &kp F9           &kp F10               &kp F11               &kp F12
@@ -52,13 +48,5 @@
                           	        &trans  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_CONTROL  &kp LEFT_ALT
                         >;
                 };
-//
-//                extra_2 {
-//                        status = "reserved";
-//                };
-//
-//                extra_3 {
-//                        status = "reserved";
-//                };
         };
 };
