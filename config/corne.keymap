@@ -7,57 +7,50 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        display-name = "Base";
+                        display-name = "default";
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+   &none        &kp Q        &kp W &kp F              &kp P          &kp B         &kp J            &kp L              &kp U     &kp Y     &kp DOWN         &none
+   &kp A        &mo 2        &kp R &kp S              &kp T          &kp G         &kp M            &kp N              &kp E     &kp I     &mo 1            &kp O
+   &kp Z        &kp ESCAPE   &kp X &kp C              &kp D          &kp V         &kp K            &kp H              &kp LEFT  &kp RIGHT &kp ENTER        &kp UP
+                                   &kp BACKSPACE &kp LEFT_SHIFT &kp SPACE     &kp LEFT_GUI  &kp LEFT_CONTROL  &kp LEFT_ALT
                         >;
                 };
+
                 lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        display-name = "Lower";
+                        display-name = "symbols";
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &none         &none             &kp N9               &kp N5           &kp N0       &kp N3                   &kp N2                &kp N1      &kp N4          &kp N8            &none            &none
+   &kp AMPERSAND &kp LEFT_BRACKET  &kp LEFT_PARENTHESES &kp LEFT_BRACE   &kp COLON    &kp N7                   &kp N6                &kp EQUAL   &kp COMMA       &kp DOT           &trans           &none
+   &none         &kp RIGHT_BRACKET &kp PLUS             &kp MINUS        &kp HASH     &kp RIGHT_BRACE          &kp RIGHT_PARENTHESES &kp PERCENT &kp SEMICOLON   &kp GREATER_THAN  &none
+                          	       &kp CAPSLOCK         &kp LEFT_SHIFT   &kp PAGE_DOWN               &kp PAGE_UP                &kp LEFT_CONTROL      &kp LEFT_ALT
                         >;
                 };
 
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        display-name = "Raise";
+                extras_layer {
+                        display-name = "extras";
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                    	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &none  &none   &mo 3           &kp GRAVE     &kp EXCLAMATION  &kp TILDE           &kp UNDERSCORE  &kp QUESTION       &kp SINGLE_QUOTE  &kp PIPE        &none            &none
+   &none  &trans  &msc SCRL_DOWN  &msc SCRL_UP  &msc LCLCK       &msc MCLCK          &kp TAB         &mmv MOVE_LEFT     &mmv MOVE_UP      &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp ASTERISK
+   &none  &none   &kp LESS_THAN   &kp DOLLAR    &kp SLASH        &kp CARET           &msc RCLCK      &kp DOUBLE_QUOTES  &kp HOME          &kp END         &kp AT           &none
+                                                             &kp BACKSLASH    &kp LEFT_SHIFT  &msc SCRL_LEFT     &msc SCRL_RIGHT  &kp LEFT_CONTROL  &kp LEFT_ALT
                         >;
                 };
 
-                extra_1 {
-                        status = "reserved";
+                mouse_layer {
+                        display-name = "mouse";
+                        bindings = <
+   &trans  &trans  &trans  &bt BT_CLR  &bt BT_SEL 1  &bt BT_SEL 2          &kp F1      &kp F2             &kp F3           &kp F4                &kp F5                &kp F6
+   &trans  &trans  &trans  &bt BT_PRV  &bt BT_NXT    &bt BT_SEL 3          &kp F7      &kp F8             &kp F9           &kp F10               &kp F11               &kp F12
+   &trans  &trans  &trans  &trans      &bt BT_SEL 5  &bt BT_SEL 4          &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &kp PRINTSCREEN
+                          	        &trans  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_GUI  &kp LEFT_CONTROL  &kp LEFT_ALT
+                        >;
                 };
 
                 extra_2 {
