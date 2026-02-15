@@ -37,8 +37,8 @@
                         display-name = "extras";
                         bindings = <
    &none  &none   &mo 3           &kp GRAVE     &kp EXCLAMATION  &kp TILDE           &kp UNDERSCORE  &kp QUESTION       &kp SINGLE_QUOTE  &kp PIPE        &none            &none
-   &none  &trans  &msc SCRL_DOWN  &msc SCRL_UP  &mkp LCLCK       &mkp MCLCK          &kp TAB         &mmv MOVE_LEFT     &mmv MOVE_UP      &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp ASTERISK
-   &none  &none   &kp LESS_THAN   &kp DOLLAR    &kp SLASH        &kp CARET           &mkp RCLCK      &kp DOUBLE_QUOTES  &kp HOME          &kp END         &kp AT           &none
+   &none  &trans  &msc SCRL_DOWN  &msc SCRL_UP  &mkp LCLK        &mkp MCLK           &kp TAB         &mmv MOVE_LEFT     &mmv MOVE_UP      &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp ASTERISK
+   &none  &none   &kp LESS_THAN   &kp DOLLAR    &kp SLASH        &kp CARET           &mkp RCLK       &kp DOUBLE_QUOTES  &kp HOME          &kp END         &kp AT           &none
                                                              &kp BACKSLASH    &kp LEFT_SHIFT  &msc SCRL_LEFT     &msc SCRL_RIGHT  &kp LEFT_CONTROL  &kp LEFT_ALT
                         >;
                 };
